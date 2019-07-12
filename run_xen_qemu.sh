@@ -15,11 +15,13 @@ qemu-system-aarch64 \
     -device loader,file=/home/c/w/qemu_xen_testing/xen,force-raw=on,addr=0x49000000 \
     -device loader,file=/home/c/w/qemu_xen_testing/virt-gicv3.dtb,force-raw=on,addr=0x44000000 \
     -device loader,file=/home/c/w/qemu_xen_testing/Image2,force-raw=on,addr=0x4a000000 \
-    -device loader,file=/home/c/w/qemu_xen_testing/initrd.cpio,force-raw=on,addr=0x4b000000 \
+    -device loader,file=/home/c/w/qemu_xen_testing/uInitramfs,force-raw=on,addr=0x4b000000 \
     -monitor none \
     -nographic \
-    -serial file:smoke.serial \
+    -serial mon:stdio \
 
-#    -serial mon:stdio \
+
+#    -serial file:smoke.serial \
+
 
 

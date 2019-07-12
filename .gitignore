@@ -1,6 +1,7 @@
 Image
 Image2
 initrd.cpio
+uInitramfs
 smoke.serial
 u-boot.bin
 virt-gicv3.dtb
