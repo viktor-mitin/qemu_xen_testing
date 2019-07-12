@@ -16,7 +16,7 @@ cp u-boot.bin "$QEMU"/
 
 #check with qemu
 cd "$QEMU"
-timeout -k 1 1 ./run_xen_qemu.sh || return 0
+timeout -k 1 1 ./run_xen_qemu.sh 2> /dev/null || return 0
 
 sync
 test -f smoke.serial || exit 1
