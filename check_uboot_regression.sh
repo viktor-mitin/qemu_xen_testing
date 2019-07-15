@@ -3,6 +3,9 @@
 UBOOT="$HOME/w/u-boot"
 QEMU="$HOME/w/qemu_xen_testing"
 
+export CROSS_COMPILE=aarch64-linux-gnu-
+export ARCH=aarch64
+
 set -eu
 
 #build u-boot with qemu defconfig
