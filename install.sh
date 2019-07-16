@@ -26,3 +26,8 @@ qemu-system-aarch64 \
 wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-arm64-uefi1.img
 
 
+# Xen note: in order to enable early printk in case of qemu
+# the next xen compilation command line can be used:
+#
+# make debug=y CONFIG_EARLY_PRINTK=pl011,0x09000000,115200 \
+#    XEN_TARGET_ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -C xen -j8
