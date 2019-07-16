@@ -4,6 +4,8 @@ initrd.cpio
 uInitramfs
 smoke.serial
 u-boot.bin
-virt-gicv3.dtb
+*.dtb
 xen
-xenial-server-cloudimg-arm64-uefi1.img
+xen-uImage
+ramdisk/
+*.img
