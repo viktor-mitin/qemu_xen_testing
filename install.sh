@@ -6,10 +6,15 @@
 
 # Required qemu 2.11 or greater
 
+#### U-boot notes
 # U-boot must be build with QEMU options enabled, see .config file.
 # U-boot version tested are u-boot v2018.03-v2018.09.
 # However in case of >3Gb usage in needs to use v2018.07 or v2018.09
+#
+# In case of v2018.11 or later CONFIG_DM_RTC must be enabled.
+#
 # For U-boot compilation details see file check_uboot_regression.sh
+####
 
 # qemu-system-aarch64 can be installed with command:
 sudo apt install qemu-system-arm
