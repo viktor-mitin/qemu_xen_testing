@@ -11,9 +11,10 @@ send "\n"
 
 expect "=>"
 send "bootm 0x49000000 0x4b000000 0x44000000\n"
+#send "booti 0x49000000 0x4b000000 0x44000000\n"
 
-#expect " login: "
-#send "\n"
+expect " login: "
+send "\n"
 expect " login: "
 send "root\n"
 expect "#"
