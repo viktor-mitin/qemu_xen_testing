@@ -1,0 +1,28 @@
+#!/usr/bin/expect -f
+
+# Wait enough until a long-time boot
+set timeout 35
+
+# Start the guest VM
+spawn ./run_xen_qemu.sh
+
+expect "Hit any key"
+send "\n"
+
+expect "=>"
+send "bootm 0x49000000 0x4b000000 0x44000000\n"
+
+#expect " login: "
+#send "\n"
+expect " login: "
+send "root\n"
+expect "#"
+
+send "ls -l / \n"
+expect "#"
+
+
+interact +++ exit
+#interact
+
+
