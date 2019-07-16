@@ -1,0 +1,21 @@
+/dts-v1/;
+
+/ {
+        chosen {
+                bootargs = "dom0_mem=512M console=dtuart dtuart=serial0 dom0_max_vcpus=4 bootscrub=0 loglvl=all sched_ratelimit_us=100 hmp-unsafe=true";
+                xen,dom0-bootargs = "console=hvc0 ignore_loglevel";
+                modules {
+                        #address-cells = <0x00000002>;
+                        #size-cells = <0x00000002>;
+                        module@1 {
+                                reg = <0x00000000 0x45000000 0x00000000 0x02000000>;
+                                compatible = "multiboot,kernel", "multiboot,module";
+                        };
+                        module@2 {
+                                reg = <0x00000000 0x4b000000 0x00000000 0x016d9bb2>;
+                                compatible = "multiboot,ramdisk", "multiboot,module";
+                        };
+                };
+        };
+
+};
