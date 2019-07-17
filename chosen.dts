@@ -4,12 +4,12 @@
     chosen {
         bootargs = "dom0_mem=512M";
         xen,dom0-bootargs = "console=hvc0 ignore_loglevel";
-           // domU0 {
+        // domU0 {
             modules {
-                #address-cells = <0x00000002>;
-                #size-cells = <0x00000002>;
+                #address-cells = <0x00000001>;
+                #size-cells = <0x00000001>;
                 module@1 {
-                    reg = <0x00000000 0x45000000 0x00000000 0x02000000>;
+                    reg = <0x45000000 0x02000000>;
                     compatible = "multiboot,kernel", "multiboot,module";
                 };
             };
