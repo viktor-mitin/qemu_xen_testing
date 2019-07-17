@@ -27,10 +27,6 @@ qemu-system-aarch64 \
    -smp 4 -m 4096 -display none \
    -machine dumpdtb=virt-gicv3.dtb
 
-#It needs to download xenial-server-cloudimg-arm64-uefi1.img file
-wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-arm64-uefi1.img
-
-
 # Xen note: in order to enable early printk in case of qemu
 # the next xen compilation command line can be used:
 #
