@@ -11,6 +11,10 @@ send "\n"
 
 expect "=>"
 send "bootm 0x49000000 0x4b000000 0x44000000\n"
+
+#send "bootm 0x49000000 0x4b000000 0x44000000"
+#interact +++ exit
+
 #send "booti 0x49000000 0x4b000000 0x44000000\n"
 
 expect " login: "
@@ -20,6 +24,9 @@ send "root\n"
 expect "#"
 
 send "ls -l / \n"
+expect "#"
+
+send "dtc -I fs -O dts /sys/firmware/devicetree/base/ > dt.txt \n"
 expect "#"
 
 
