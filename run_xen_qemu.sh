@@ -15,11 +15,14 @@ qemu-system-aarch64 \
     -device loader,file=virt-gicv3_chosen.dtb,force-raw=on,addr=0x44000000 \
     -device loader,file=Image2,force-raw=on,addr=0x4a000000 \
     -device loader,file=uramdisk.img,force-raw=on,addr=0x4b000000 \
+    -device loader,file=Image-domU,force-raw=on,addr=0x50000000 \
+    -device loader,file=domU-ramdisk.cpio,force-raw=on,addr=0x62000000 \
     -monitor none \
     -nographic \
     -serial mon:stdio \
 
 
+#    -device loader,file=uramdisk1.img,force-raw=on,addr=0x62000000 \
 #    -serial file:smoke.serial \
 
 

@@ -1,4 +1,4 @@
-Image
+Image*
 Image2
 initrd.cpio
 uInitramfs
@@ -9,3 +9,4 @@ xen
 xen-uImage
 ramdisk/
 *.img
+*.cpio

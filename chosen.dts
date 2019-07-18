@@ -2,22 +2,40 @@
 
 / {
     chosen {
-        bootargs = "dom0_mem=512M";
+        bootargs = "dom0_mem=1024M";
         xen,dom0-bootargs = "console=hvc0 ignore_loglevel";
-        // domU0 {
-            modules {
-                #address-cells = <0x00000001>;
-                #size-cells = <0x00000001>;
-                module@1 {
-                    reg = <0x45000000 0x02000000>;
-                    compatible = "multiboot,kernel", "multiboot,module";
-                };
+
+        domU0 {
+            compatible = "xen,domain";
+            cpus = <1>;
+            memory = <0x0 0x80000>;
+            vpl011;
+            #address-cells = <0x00000001>;
+            #size-cells = <0x00000001>;
+            module@0x50000000 {
+                compatible = "multiboot,kernel", "multiboot,module";
+                bootargs = "console=ttyAMA0,115200";
+                reg = <0x50000000 0x02000000>;
             };
-        //};
+            module@0x62000000 {
+                compatible = "multiboot,ramdisk", "multiboot,module";
+                reg = <0x62000000 0x01700000>;
+            };
+
+        };
+
+        modules {
+            #address-cells = <0x00000001>;
+            #size-cells = <0x00000001>;
+            module@1 {
+                reg = <0x45000000 0x02000000>;
+                compatible = "multiboot,kernel", "multiboot,module";
+            };
+        };
     };
 
-    timer {
-        clock-frequency = <62500000>;
-    };
+    //timer {
+        //clock-frequency = <62500000>;
+    //};
 
 };
